@@ -9,15 +9,14 @@
   function MainController($timeout, webDevTec, toastr) {
     var vm = this;
 
-    vm.awesomeThings = [];
-    vm.classAnimation = '';
-    vm.creationDate = 1446323364961;
-    vm.showToastr = showToastr;
+    vm.presentation = {title: '',
+                        totalSlides: 0,
+                        currentSlide: 0,
+                      endTime:'2015-11-01T20:25:43.511Z'}
 
     activate();
 
     function activate() {
-      getWebDevTec();
       $timeout(function() {
         vm.classAnimation = 'rubberBand';
       }, 4000);
@@ -28,12 +27,5 @@
       vm.classAnimation = '';
     }
 
-    function getWebDevTec() {
-      vm.awesomeThings = webDevTec.getTec();
-
-      angular.forEach(vm.awesomeThings, function(awesomeThing) {
-        awesomeThing.rank = Math.random();
-      });
-    }
   }
 })();

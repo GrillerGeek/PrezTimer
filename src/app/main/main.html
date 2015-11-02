@@ -1,1 +1,22 @@
 
+  <form class="form-horizontal">
+    <div class="form-group">
+      <label for="inputPresTitle" class="col-sm-2 control-label">Title</label>
+      <div class="col-sm-10">
+        <input ng-model="main.presentation.title" id="inputPresTitle" class="form-control" placeholder="Title"></input>
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="inputTotalSlides" class="col-sm-2 control-label">Total Slides</label>
+      <div class="col-sm-10">
+        <input ng-model="main.presentation.totalSlides" id="inputTotalSlides" class="form-control" placeholder="Total Slides"></input>
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="inputEndTime" class="col-sm-2 control-label">End Time</label>
+      <div class="col-sm-10">
+        <uib-timepicker id="inputEndTime" ng-model="main.presentation.endTime" ng-change="alert('Changed')" hour-step="1" minute-step="15" show-meridian="true"></uib-timepicker>
+        <!-- <input ng-model="main.presentation.endTime" id="inputEndTime" class="form-control" placeholder="End Time"></input> -->
+      </div>
+    </div>
+  </form>
