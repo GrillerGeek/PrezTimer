@@ -6,14 +6,13 @@
     .controller('MainController', MainController);
 
   /** @ngInject */
-  function MainController($timeout, webDevTec, toastr) {
+  function MainController($timeout, webDevTec, toastr, prezService, $log) {
     var vm = this;
 
-    vm.presentation = {title: '',
-                        totalSlides: 0,
-                        currentSlide: 0,
-                      endTime:'2015-11-01T20:25:43.511Z'}
+    vm.presentation = prezService.prez;
 
+    vm.startPrez = startPrez;
+    
     activate();
 
     function activate() {
@@ -25,6 +24,10 @@
     function showToastr() {
       toastr.info('Fork <a href="https://github.com/Swiip/generator-gulp-angular" target="_blank"><b>generator-gulp-angular</b></a>');
       vm.classAnimation = '';
+    }
+    
+    function startPrez() {
+        $log.log(vm.presentation);
     }
 
   }
