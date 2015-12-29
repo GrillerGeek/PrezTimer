@@ -7,7 +7,38 @@
 
 <div ng-hide="prez.blockTimer">
 <h2>{{prez.presentation.title}}</h2>
-<p>Total Slides: {{prez.presentation.totalSlides}} Current Slide: {{prez.presentation.currentSlide}}, Start Time: , End Time: {{ prez.presentation.endTime | date:"h:mma" }}</p>
+
+<div class="row">   
+    <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+        Slide:     
+    </div>
+    <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
+        {{prez.presentation.currentSlide}}
+    </div>
+    <div class="col-xs-2 col-sm-2 col-md-8 col-lg-2">
+        of:     
+    </div>
+    <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
+        {{prez.presentation.totalSlides}} 
+    </div>
+</div>
+<div class="row">   
+    
+    <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
+        Start:     
+    </div>
+    <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+        {{prez.presentation.startTime | date:"h:mma" }} 
+    </div>
+    <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
+        End:     
+    </div>
+    <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+       {{ prez.presentation.endTime | date:"h:mma" }}
+    </div>
+</div>
+
+<p></p>
 
 <button class="btn btn-primary" ng-click="prez.previousSlide()">Previous</button><button class="btn btn-primary" ng-click="prez.nextSlide()">Next</button>
 </div>

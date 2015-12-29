@@ -26,6 +26,8 @@
             vm.alertType = 'alert-danger';
             vm.message = 'You did not define a presentation. Return to home and provide the presenation details';
         } 
+        
+        vm.presentation.startTime = new Date().getTime();
     }
     
     function previousSlide() {
