@@ -1,6 +1,13 @@
+
+<div ng-show="prez.blockTimer" class="alert" ng-class="prez.alertType">
+    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+    <strong>{{prez.messageTitle}}</strong>
+    {{prez.message}}
+</div>
+
+<div ng-hide="prez.blockTimer">
 <h2>{{prez.presentation.title}}</h2>
 <p>Total Slides: {{prez.presentation.totalSlides}} Current Slide: {{prez.presentation.currentSlide}}, Start Time: , End Time: {{ prez.presentation.endTime | date:"h:mma" }}</p>
 
 <button class="btn btn-primary" ng-click="prez.previousSlide()">Previous</button><button class="btn btn-primary" ng-click="prez.nextSlide()">Next</button>
-
-<button class="btn btn-danger" ng-click="prez.newPresentation()">New Presentation</button>
+</div>
